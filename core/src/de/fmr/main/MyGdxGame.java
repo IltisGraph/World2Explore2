@@ -73,7 +73,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		t.setRenderXY(t.getX() - Player.getX(), t.getY() - Player.getY());
 		
 		Player.actualize();
-		System.out.println(Player.getX() + Player.getY());
+		//System.out.println(Player.getX() + Player.getY());
 		
 		
 	}
