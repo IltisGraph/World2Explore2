@@ -60,15 +60,15 @@ public class Player {
 			this.y += speed;
 			if(this.state != 0) this.state = 0;
 		}
-		else if(Gdx.input.isKeyPressed(Input.Keys.D)) {
+		if(Gdx.input.isKeyPressed(Input.Keys.D)) {
 			this.x += speed;
 			if(this.state != 1) this.state = 1;
 		}
-		else if(Gdx.input.isKeyPressed(Input.Keys.S)) {
+		if(Gdx.input.isKeyPressed(Input.Keys.S)) {
 			this.y -= speed;
 			if(this.state != 2) this.state = 2;
 		}
-		else if(Gdx.input.isKeyPressed(Input.Keys.A)) {
+		if(Gdx.input.isKeyPressed(Input.Keys.A)) {
 			this.x -= speed;
 			if(this.state != 3) this.state = 3;
 		}
