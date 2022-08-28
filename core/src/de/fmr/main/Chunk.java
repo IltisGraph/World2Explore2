@@ -29,7 +29,7 @@ public class Chunk {
 	public void render(Player Player) {
 		
 		for(Tree t : this.t) {
-			if(Player.getY() < t.getY() + 32) {
+			if(Player.getY() + Gdx.graphics.getHeight() / 2 < t.getY() + 32) {
 				t.setRenderXY(t.getX() - Player.getX(), t.getY() - Player.getY());
 				t.render(b);
 			}
@@ -42,7 +42,7 @@ public class Chunk {
 	public void renderForeground(Player Player) {
 		
 		for(Tree t : this.t) {
-			if(Player.getY() + Gdx.graphics.getHeight() / 2> t.getY() + 32) {
+			if(Player.getY() + Gdx.graphics.getHeight() / 2 > t.getY() + 32) {
 				t.setRenderXY(t.getX() - Player.getX(), t.getY() - Player.getY());
 				t.render(b);
 			}
