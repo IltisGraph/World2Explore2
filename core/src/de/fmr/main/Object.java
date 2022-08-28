@@ -20,6 +20,8 @@ public class Object {
 		return this.y;
 	}
 	
+
+	
 	public void render(SpriteBatch b) {
 		b.begin();
 		b.draw(this.img, this.sx, this.sy, 128, 128);

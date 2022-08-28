@@ -59,6 +59,9 @@ public class MyGdxGame extends ApplicationAdapter {
 		//Player
 		Player.render(batch);
 		
+		//spieler hinter baum
+		chunk.renderForeground(Player);
+		
 		
 		
 	}
@@ -73,7 +76,13 @@ public class MyGdxGame extends ApplicationAdapter {
 		t.setRenderXY(t.getX() - Player.getX(), t.getY() - Player.getY());
 		
 		Player.actualize();
-		//System.out.println(Player.getX() + Player.getY());
+		
+		/*
+		System.out.print(Player.getX());
+		System.out.print("Y:");
+		System.out.println(Player.getY());
+		
+		*/
 		
 		
 	}

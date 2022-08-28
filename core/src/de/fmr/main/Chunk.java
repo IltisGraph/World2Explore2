@@ -1,5 +1,6 @@
 package de.fmr.main;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Chunk {
@@ -28,11 +29,24 @@ public class Chunk {
 	public void render(Player Player) {
 		
 		for(Tree t : this.t) {
-			t.setRenderXY(t.getX() - Player.getX(), t.getY() - Player.getY());
-			t.render(b);
+			if(Player.getY() < t.getY() + 32) {
+				t.setRenderXY(t.getX() - Player.getX(), t.getY() - Player.getY());
+				t.render(b);
+			}
 		}
 		
 		
+		
+	}
+	
+	public void renderForeground(Player Player) {
+		
+		for(Tree t : this.t) {
+			if(Player.getY() + Gdx.graphics.getHeight() / 2> t.getY() + 32) {
+				t.setRenderXY(t.getX() - Player.getX(), t.getY() - Player.getY());
+				t.render(b);
+			}
+		}
 		
 	}
 
