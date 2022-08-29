@@ -29,5 +29,27 @@ public class Game {
 		
 	}
 	
+	public Tree[] createChunk(int x, int y) {
+		
+		int a = r.nextInt(16) + 16;
+		
+		int lastY = y;
+		
+		int stepY = 600 / a;
+		
+		int newY;
+		
+		Tree[] out = new Tree[a];
+		
+		for(int i = 0; i < a; i++) {
+			newY = lastY - stepY;
+			lastY = newY;
+			
+			out[i] = new Tree(r.nextInt(600) + x, newY);
+		}
+		
+		return out;
+	}
+	
 	
 }

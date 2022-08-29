@@ -16,7 +16,10 @@ public class MyGdxGame extends ApplicationAdapter {
 	ShapeRenderer sp;
 	Player Player;
 	
+	private final int RENDER_CHUNKS = 16;
+	
 	Chunk chunk;
+	Chunk[] chunks;
 	Game g;
 	
 	
@@ -27,11 +30,25 @@ public class MyGdxGame extends ApplicationAdapter {
 		sp = new ShapeRenderer();
 		Player = new Player(Gdx.graphics.getWidth() / 2 - 32, Gdx.graphics.getHeight() / 2 - 32);
 		
+		
 		g = new Game();
 		
 		
 		chunk = new Chunk(0, 600, batch, g.createSpawnChunk());
-			
+		
+		
+		
+		chunks = new Chunk[RENDER_CHUNKS ];
+		System.out.println("HEllo World!");
+		int counter = -1;
+		for(int x = (int) -(Math.sqrt(RENDER_CHUNKS) / 2 * 600); x < Math.sqrt(RENDER_CHUNKS) / 2 * 600; x += 600) {
+			for(int y = (int) Math.sqrt(RENDER_CHUNKS) / 2 * 600; y > -Math.sqrt(RENDER_CHUNKS) / 2 * 600; y -= 600) {
+				System.out.print("DONE:");
+				System.out.println(counter);
+				counter++;
+				chunks[counter] = new Chunk(x, y, batch, g.createChunk(x, y));
+			}
+		}
 		
 	}
 
@@ -54,6 +71,10 @@ public class MyGdxGame extends ApplicationAdapter {
 		//Chunk
 		chunk.render(Player);
 		
+		for(Chunk c : chunks) {
+			c.render(Player);
+		}
+		
 		
 		
 		//Player
@@ -61,6 +82,10 @@ public class MyGdxGame extends ApplicationAdapter {
 		
 		//spieler hinter baum
 		chunk.renderForeground(Player);
+		
+		for(Chunk c : chunks) {
+			c.renderForeground(Player);
+		}
 		
 		
 		
@@ -77,12 +102,13 @@ public class MyGdxGame extends ApplicationAdapter {
 		
 		Player.actualize();
 		
+		
 		/*
 		System.out.print(Player.getX());
 		System.out.print("Y:");
 		System.out.println(Player.getY());
-		
 		*/
+		
 		
 		
 	}
