@@ -34,7 +34,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		g = new Game();
 		
 		
-		chunk = new Chunk(0, 600, batch, g.createSpawnChunk());
+		//chunk = new Chunk(0, 600, batch, g.createSpawnChunk());
 		
 		
 		
@@ -69,7 +69,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		
 		
 		//Chunk
-		chunk.render(Player);
+		//chunk.render(Player);
 		
 		for(Chunk c : chunks) {
 			c.render(Player);
@@ -81,7 +81,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		Player.render(batch);
 		
 		//spieler hinter baum
-		chunk.renderForeground(Player);
+		//chunk.renderForeground(Player);
 		
 		for(Chunk c : chunks) {
 			c.renderForeground(Player);
@@ -100,7 +100,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	public void update() {
 		
 		
-		Player.actualize();
+		Player.actualize(chunks);
 		
 		
 		/*

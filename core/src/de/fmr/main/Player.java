@@ -46,7 +46,25 @@ public class Player {
 		return this.state;
 	}
 	
-	public void actualize() {
+	public int getSX() {
+		return this.sx;
+	}
+	
+	public int getSY() {
+		return this.sy;
+	}
+	
+	public void actualize(Chunk[] chunks) {
+		
+		boolean Wallowed = true;
+		
+		for(Chunk c : chunks) {
+			if(c.collidesW(this)) { 
+				Wallowed = false;
+				break;
+			}
+			
+		}
 		
 		
 		//speed
@@ -56,7 +74,7 @@ public class Player {
 		
 		
 		//keys
-		if (Gdx.input.isKeyPressed(Input.Keys.W)) {
+		if (Gdx.input.isKeyPressed(Input.Keys.W) && Wallowed) {
 			this.y += speed;
 			if(this.state != 0) this.state = 0;
 		}

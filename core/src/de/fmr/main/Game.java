@@ -51,5 +51,9 @@ public class Game {
 		return out;
 	}
 	
+	static boolean checkIfCollidesTree(int x, int y, int ex, int ey) {
+		return x > ex && x < ex + 38 && y > ey && y < ey + 60;
+	}
+	
 	
 }

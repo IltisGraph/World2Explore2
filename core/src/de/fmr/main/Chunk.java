@@ -49,5 +49,23 @@ public class Chunk {
 		}
 		
 	}
+	
+	public boolean collidesW(Player p) {
+		//does nothing if chunks is too far away
+		//if(p.getX() > this.x + 700 || p.getX() < this.x - 100 || p.getY() > this.y - 100 || p.getY() < this.y + 700) return false;
+		
+		
+		boolean collides = false;
+		
+		for(Tree t : this.t) {
+			
+			if(Game.checkIfCollidesTree(p.getSX() + p.getX(), p.getSY() + p.getY() + 10, t.getX() + 10, t.getY())) return true;
+			
+			
+			
+		}
+		
+		return false;
+	}
 
 }
