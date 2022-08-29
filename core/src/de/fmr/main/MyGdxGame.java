@@ -15,7 +15,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	Texture img;
 	ShapeRenderer sp;
 	Player Player;
-	Tree t;
+	
 	Chunk chunk;
 	Game g;
 	
@@ -25,11 +25,11 @@ public class MyGdxGame extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
 		sp = new ShapeRenderer();
-		Player = new Player(250 - 32, 250 - 32);
+		Player = new Player(Gdx.graphics.getWidth() / 2 - 32, Gdx.graphics.getHeight() / 2 - 32);
 		
 		g = new Game();
 		
-		t = new Tree(200, 200);
+		
 		chunk = new Chunk(0, 600, batch, g.createSpawnChunk());
 			
 		
@@ -49,7 +49,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		
 		//Trees
 		
-		t.render(batch);
+		
 		
 		//Chunk
 		chunk.render(Player);
@@ -73,7 +73,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	}
 	
 	public void update() {
-		t.setRenderXY(t.getX() - Player.getX(), t.getY() - Player.getY());
+		
 		
 		Player.actualize();
 		
