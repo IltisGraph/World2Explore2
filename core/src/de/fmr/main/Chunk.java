@@ -59,9 +59,27 @@ public class Chunk {
 		
 		for(Tree t : this.t) {
 			
-			if(Game.checkIfCollidesTree(p.getSX() + p.getX(), p.getSY() + p.getY() + 10, t.getX() + 10, t.getY())) return true;
+			if(Game.checkIfCollidesTreeFront(p.getSX() + p.getX(), p.getSY() + p.getY() + 10, t.getX() + 10, t.getY()) &&
+					Game.checkIfCollidesTreeFront(p.getSX() + p.getX() + 1, p.getSY() + p.getY() + 10, t.getX() + 10, t.getY())) return true;
 			
 			
+			
+		}
+		
+		return false;
+	}
+	
+	public boolean collidesA(Player p) {
+		
+		return false;
+	}
+	
+	public boolean collidesS(Player p) {
+
+
+		for(Tree t : this.t) {
+			if(Game.checkIfCollidesTreeFront(p.getSX() + p.getX(), p.getSY() + p.getY() + 0, t.getX() + 10, t.getY()) &&
+					Game.checkIfCollidesTreeFront(p.getSX() + p.getX() + 1, p.getSY() + p.getY() + 0, t.getX() + 10, t.getY())) return true;
 			
 		}
 		

@@ -58,11 +58,20 @@ public class Player {
 		
 		boolean Wallowed = true;
 		
+		boolean Sallowed = true;
+		
 		for(Chunk c : chunks) {
 			if(c.collidesW(this)) { 
 				Wallowed = false;
-				break;
+			
 			}
+			
+			if(c.collidesS(this)) {
+				Sallowed = false;
+			}
+			
+			if(Sallowed == false && Wallowed == false) break;
+			
 			
 		}
 		
@@ -82,7 +91,7 @@ public class Player {
 			this.x += speed;
 			if(this.state != 1) this.state = 1;
 		}
-		if(Gdx.input.isKeyPressed(Input.Keys.S)) {
+		if(Gdx.input.isKeyPressed(Input.Keys.S) && Sallowed) {
 			this.y -= speed;
 			if(this.state != 2) this.state = 2;
 		}
