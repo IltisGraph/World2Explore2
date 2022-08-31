@@ -54,6 +54,8 @@ public class Chunk {
 		//does nothing if chunks is too far away
 		//if(p.getX() > this.x + 700 || p.getX() < this.x - 100 || p.getY() > this.y - 100 || p.getY() < this.y + 700) return false;
 		
+		if((p.getX() + p.getSX() > this.x + 650 || p.getX() + p.getSX() < this.x - 650 || p.getY() + p.getSY() < this.y - 650 || p.getY() + p.getSY() > this.y + 650)) return false;
+		
 		
 		boolean collides = false;
 		

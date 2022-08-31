@@ -46,7 +46,7 @@ public class MyGdxGame extends ApplicationAdapter {
 				System.out.print("DONE:");
 				System.out.println(counter);
 				counter++;
-				chunks[counter] = new Chunk(x, y, batch, g.createChunk(x, y));
+				chunks[counter] = new Chunk(x, y, batch, Game.createChunk(x, y));
 			}
 		}
 		
@@ -101,6 +101,10 @@ public class MyGdxGame extends ApplicationAdapter {
 		
 		
 		Player.actualize(chunks);
+		
+		chunks = Game.actualizeChunk(chunks, Player, batch);
+		
+		//System.out.println(chunks.length);
 		
 		
 		/*
