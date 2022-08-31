@@ -16,7 +16,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	ShapeRenderer sp;
 	Player Player;
 	
-	private final int RENDER_CHUNKS = 16;
+	public static final int RENDER_CHUNKS = 16;
 	
 	Chunk chunk;
 	Chunk[] chunks;
@@ -102,8 +102,38 @@ public class MyGdxGame extends ApplicationAdapter {
 		
 		Player.actualize(chunks);
 		
+		Chunk[] nusa = chunks.clone();
+		
+		//chunks = null;
+		
+		
 		chunks = Game.actualizeChunk(chunks, Player, batch);
 		
+		nusa = null;
+		
+		//System.gc();
+		
+		/*
+		
+		Tree[] a;
+		a = Game.createChunk(0, 600);
+		
+		Game.clrChunkCache();
+		
+		a = null;
+		
+		*/
+		
+		//Game.createChunk(0, 600);
+		//System.gc();
+		
+		//Chunk[] b = Game.actualizeChunk(chunks, Player, batch);
+		
+		
+		
+		
+		
+		//System.out.println(chunks[0]);
 		//System.out.println(chunks.length);
 		
 		
